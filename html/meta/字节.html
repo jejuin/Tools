@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,Chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- browser check start -->
+    <script>
+      (function (nav) {
+        var isChinese;
+        var G_ALERT_IE;
+        var isIEOld = nav.userAgent.match(/MSIE\s+\d/); // Browser <= IE10
+        if (isIEOld) {
+          isChinese =
+            nav.language === "zh-CN" ||
+            nav.userLanguage === "zh-CN" ||
+            nav.systemLanguage === "zh-CN";
+          // IE do not support if condition after IE 10, so we only use user agent to check IE browser
+          G_ALERT_IE = isChinese
+            ? "很抱歉！我们目前暂时不支持 IE 浏览器，请使用 Chrome、Edge 等现代浏览器代替。点击确定后将会自动跳转到 Chrome 下载地址 :)"
+            : "Sorry! We do not support IE browser yet, please use Chrome, Edge etc. After click OK will auto jump to Chrome download page :)";
+          alert(G_ALERT_IE);
+          // 确定后可以立即跳转到下载页并不再执行后面的 scripts
+          location.replace(
+            isChinese
+              ? "https://www.google.cn/chrome/"
+              : "https://www.google.com/chrome/"
+          );
+        }
+      })(navigator);
+    </script>
+    <!-- browser check end -->
+
+    <title>加入字节跳动</title>
+    <link
+      rel="shortcut icon"
+      href="//lf3-ppcdn-tos.pstatp.com/obj/atsx-fe-prod/portal/mainland/favicon.ico"
+    />
+  </head>
+  <body></body>
+</html>
